@@ -56,7 +56,12 @@ class BusinessTable extends Table
 
     $validator
          ->requirePresence('name', 'create')
-         ->notEmpty('name');
+         ->notEmpty('name')
+	 ->add('name', 'unique', [
+      'rule' => 'validateUnique',
+      'provider' => 'table',
+      'message' => 'El negocio ya existe'
+	 ]);
 
     $validator
          ->requirePresence('slug', 'create')
@@ -69,8 +74,13 @@ class BusinessTable extends Table
     $validator
          ->email('email')
          ->requirePresence('email', 'create')
-         ->notEmpty('email');
-
+         ->notEmpty('email')
+	 ->add('email', 'unique', [
+      'rule' => 'validateUnique',
+      'provider' => 'table',
+      'message' => 'El correo electrónico ya existe'
+	 ]);
+    
     $validator
          ->requirePresence('facebook', 'create')
          ->notEmpty('facebook');
@@ -78,10 +88,6 @@ class BusinessTable extends Table
     $validator
          ->requirePresence('twitter', 'create')
          ->notEmpty('twitter');
-
-    $validator
-         ->requirePresence('logo', 'create')
-         ->notEmpty('logo');
 
     $validator
          ->requirePresence('folder', 'create')

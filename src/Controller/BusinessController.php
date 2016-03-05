@@ -55,17 +55,24 @@ class BusinessController extends AppController
     
     $busines = $this->Business->newEntity();
     if ($this->request->is('post')) {
+      
       $slug = Inflector::slug($this->request->data['name']);
       $this->request->data['slug'] = $slug;
       $this->request->data['membership'] = 0;
       $this->request->data['active'] = true;
-      $logo = $slug . substr($this->request->data['logo']['name'], -4);
-      $folder = 'uploads/' . $logo;
-
-      move_uploaded_file($this->request->data['logo']["tmp_name"], $folder);
-
-      $this->request->data['folder'] = $folder;
-      $this->request->data['logo'] = $logo;
+      
+      if($this->request->data['logo']['name'] != ''){
+	$logo = sha1(md5($this->request->data['name'])) . substr($this->request->data['logo']['name'], -4);
+	$folder = 'uploads/' . $logo;
+  
+	move_uploaded_file($this->request->data['logo']["tmp_name"], $folder);
+	
+	$this->request->data['folder'] = $folder;
+	$this->request->data['logo'] = $logo;
+      }else{
+	$this->request->data['folder'] = 'uploads/controla-logo.png';
+	$this->request->data['logo'] = 'controla-logo.png';
+      }
       
       $busines = $this->Business->patchEntity($busines, $this->request->data);
       if ($this->Business->save($busines)) {

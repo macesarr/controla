@@ -12,7 +12,7 @@
 <div class="page-header">
   <div class="row">
     <div class="col-lg-12">
-      <h1><?= __('Ingrese los datos de tu negocio') ?></h1>
+      <h1><?= __('Ingrese los datos de su negocio') ?></h1>
     </div>
   </div>
 </div>
@@ -42,6 +42,7 @@
   <div class="col-lg-6">
     <div class='form-group'>
       <?= $this->Form->input('email', ['label'=>__('* Correo electrónico de contacto'), 'class'=>'form-control']); ?>
+      <span class="help-block"><?= 'El correo ingresado será usado luego para el acceso a la administración de su negocio.'; ?></span>
     </div>
     <div class='form-group'>
       <?= $this->Form->input('facebook', ['label'=>__('Facebook'), 'class'=>'form-control', 'value'=>'#']); ?>
@@ -49,29 +50,32 @@
     <div class='form-group'>
       <?= $this->Form->input('twitter', ['label'=>__('Twitter'), 'class'=>'form-control', 'value'=>'#']); ?>
     </div>
-    <div class="form-group">
-      <?= $this->Form->input('logo', ['label'=>__('Cargue el logo de su negocio'), 'class'=>'form-control', 'type' => 'file', 'accept' => 'image/*']); ?>
-      <?= $this->Form->hidden('folder'); ?>
+    <div class="row">
+      <div class="col-lg-6">
+	<div class="form-group">
+	  <?= $this->Form->input('logo', ['label'=>__('Cargue el logo de su negocio'), 'class'=>'form-control', 'type' => 'file', 'accept' => 'image/*']); ?>
+	  <span class="help-block"><?= 'El logo puede subirlo luego sin problema'; ?></span>
+	</div>
+      </div>
+      <div class="col-lg-6">
+	<center>
+	<?= $this->Html->image('/uploads/controla-logo.png', [
+	      'alt' => 'Controla',
+	      'width' => '140',
+	      'class' => 'img-responsive'
+	    ]); ?>
+	</center>
+      </div>
     </div>
+    
+    
 
     <hr>
     
     <div class='form-group'>
-      <?= $this->Form->button(__('Guardar'), ['class'=>'btn btn-lg btn-block btn-success']) ?>
+      <?= $this->Form->button(__('Guardar y proceder a registrarme'), ['class'=>'btn btn-lg btn-block btn-success']) ?>
       <?= $this->Form->end() ?>
     </div>
   </div><!-- /col-lg-6 -->
   
 </div><!-- /row -->
-
-
-<!--
-<div class="business form large-9 medium-8 columns content">
-
-<fieldset>
-<legend></legend>
-
-</fieldset>
-
-</div>
--->
