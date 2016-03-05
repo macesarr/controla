@@ -18,7 +18,7 @@
 </div>
 
 <div class="row">
-  <?= $this->Form->create($busines) ?>
+  <?= $this->Form->create($busines, ['type' => 'file']) ?>
   <div class="col-lg-6">
     <div class="alert alert-dismissible alert-info">
       <p><?= __('Todos los campos con (*) son obligatorios'); ?></p>
@@ -49,17 +49,11 @@
     <div class='form-group'>
       <?= $this->Form->input('twitter', ['label'=>__('Twitter'), 'class'=>'form-control', 'value'=>'#']); ?>
     </div>
+    <div class="form-group">
+      <?= $this->Form->input('logo', ['label'=>__('Cargue el logo de su negocio'), 'class'=>'form-control', 'type' => 'file', 'accept' => 'image/*']); ?>
+      <?= $this->Form->hidden('folder'); ?>
+    </div>
 
-        <?php
-    echo $this->Form->input('logo');
-    echo $this->Form->input('folder');
-    ?>
-
-    <?php
-    $this->Form->hidden('membership', ['value'=>'0']);
-    $this->Form->hidden('active', ['value'=>'1']);
-    ?>
-    
     <hr>
     
     <div class='form-group'>
@@ -73,11 +67,11 @@
 
 <!--
 <div class="business form large-9 medium-8 columns content">
-  
-  <fieldset>
-    <legend></legend>
 
-  </fieldset>
+<fieldset>
+<legend></legend>
+
+</fieldset>
 
 </div>
 -->

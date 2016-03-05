@@ -33,7 +33,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script') ?>
   </head>
   <body>    
-    <?= $this->element('navbar');?>
+    <!-- <?= $this->element('navbar');?> -->
     <div class="container">
 
       <?= $this->Flash->render() ?>

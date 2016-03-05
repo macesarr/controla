@@ -59,6 +59,14 @@ class BusinessController extends AppController
       $this->request->data['slug'] = $slug;
       $this->request->data['membership'] = 0;
       $this->request->data['active'] = true;
+      $logo = $slug . substr($this->request->data['logo']['name'], -4);
+      $folder = 'uploads/' . $logo;
+
+      move_uploaded_file($this->request->data['logo']["tmp_name"], $folder);
+
+      $this->request->data['folder'] = $folder;
+      $this->request->data['logo'] = $logo;
+      
       $busines = $this->Business->patchEntity($busines, $this->request->data);
       if ($this->Business->save($busines)) {
 	$this->Flash->success(__('The busines has been saved.'));
