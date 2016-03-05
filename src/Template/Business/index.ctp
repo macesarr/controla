@@ -25,6 +25,7 @@
                 <th><?= $this->Paginator->sort('logo') ?></th>
                 <th><?= $this->Paginator->sort('folder') ?></th>
                 <th><?= $this->Paginator->sort('membership') ?></th>
+                <th><?= $this->Paginator->sort('active') ?></th>
                 <th><?= $this->Paginator->sort('created') ?></th>
                 <th><?= $this->Paginator->sort('updated') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
@@ -45,6 +46,7 @@
                 <td><?= h($busines->logo) ?></td>
                 <td><?= h($busines->folder) ?></td>
                 <td><?= $this->Number->format($busines->membership) ?></td>
+                <td><?= $this->Number->format($busines->active) ?></td>
                 <td><?= h($busines->created) ?></td>
                 <td><?= h($busines->updated) ?></td>
                 <td class="actions">

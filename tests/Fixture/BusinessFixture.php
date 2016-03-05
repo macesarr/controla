@@ -36,7 +36,7 @@ class BusinessFixture extends TestFixture
         'logo' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'folder' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'membership' => ['type' => 'integer', 'length' => 1, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'active' => ['type' => 'text', 'length' => null, 'null' => false, 'default' => 'b\'1\'', 'comment' => '', 'precision' => null],
+        'active' => ['type' => 'integer', 'length' => 4, 'unsigned' => false, 'null' => false, 'default' => '1', 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'updated' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         '_indexes' => [
@@ -74,9 +74,9 @@ class BusinessFixture extends TestFixture
             'logo' => 'Lorem ipsum dolor sit amet',
             'folder' => 'Lorem ipsum dolor sit amet',
             'membership' => 1,
-            'active' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-            'created' => '2016-03-04 15:31:31',
-            'updated' => '2016-03-04 15:31:31'
+            'active' => 1,
+            'created' => '2016-03-04 16:25:00',
+            'updated' => '2016-03-04 16:25:00'
         ],
     ];
 }

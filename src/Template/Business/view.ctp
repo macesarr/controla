@@ -63,6 +63,10 @@
             <td><?= $this->Number->format($busines->membership) ?></td>
         </tr>
         <tr>
+            <th><?= __('Active') ?></th>
+            <td><?= $this->Number->format($busines->active) ?></td>
+        </tr>
+        <tr>
             <th><?= __('Created') ?></th>
             <td><?= h($busines->created) ?></td>
         </tr>
@@ -71,8 +75,4 @@
             <td><?= h($busines->updated) ?></td>
         </tr>
     </table>
-    <div class="row">
-        <h4><?= __('Active') ?></h4>
-        <?= $this->Text->autoParagraph(h($busines->active)); ?>
-    </div>
 </div>

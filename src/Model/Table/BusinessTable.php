@@ -93,6 +93,7 @@ class BusinessTable extends Table
             ->notEmpty('membership');
 
         $validator
+            ->integer('active')
             ->requirePresence('active', 'create')
             ->notEmpty('active');
 
