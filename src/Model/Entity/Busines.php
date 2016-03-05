@@ -41,8 +41,4 @@ class Busines extends Entity
     'id' => false,
   ];
 
-  // Upload files
-
-  $addBehavior('Utils.Uploadable', []);
-  
 }
