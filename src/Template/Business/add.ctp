@@ -2,7 +2,7 @@
       <h2><?= __('Ingrese los datos de su negocio') ?></h2>
 </div>
 
-<div class="row">
+<div class="row well bs-component">
   <?= $this->Form->create($busines, ['type' => 'file']) ?>
   <div class="col-lg-6">
     <div class="alert alert-dismissible alert-info">
