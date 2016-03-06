@@ -1,20 +1,5 @@
-<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
-<ul class="side-nav">
-<li class="heading"><?= __('Actions') ?></li>
-<li><?= $this->Html->link(__('List Business'), ['action' => 'index']) ?></li>
-<li><?= $this->Html->link(__('List Business Categories'), ['controller' => 'BusinessCategories', 'action' => 'index']) ?></li>
-<li><?= $this->Html->link(__('New Business Category'), ['controller' => 'BusinessCategories', 'action' => 'add']) ?></li>
-<li><?= $this->Html->link(__('List Cities'), ['controller' => 'Cities', 'action' => 'index']) ?></li>
-<li><?= $this->Html->link(__('New City'), ['controller' => 'Cities', 'action' => 'add']) ?></li>
-</ul>
-</nav>-->
-
 <div class="page-header">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1><?= __('Ingrese los datos de su negocio') ?></h1>
-    </div>
-  </div>
+      <h2><?= __('Ingrese los datos de su negocio') ?></h2>
 </div>
 
 <div class="row">

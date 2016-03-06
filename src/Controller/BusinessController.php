@@ -76,8 +76,8 @@ class BusinessController extends AppController
       
       $busines = $this->Business->patchEntity($busines, $this->request->data);
       if ($this->Business->save($busines)) {
-	$this->Flash->success(__('The busines has been saved.'));
-	return $this->redirect(['action' => 'index']);
+	$this->Flash->success(__('Tu negocio fue guardado exitosamente. Ahora solo debes completar el registro de tu cuenta para empezar a usar CONTROLA.'));
+	return $this->redirect(['action' => 'add']);
       } else {
 	$this->Flash->error(__('The busines could not be saved. Please, try again.'));
       }
