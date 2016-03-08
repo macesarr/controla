@@ -18,8 +18,8 @@
 	  <li><a href="#"><?= __('Funciones') ?></a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><?=__('Registrarse')?></a></li>
-	  <li><a href="#"><?=__('Ingresar al sistema')?></a></li>
+          <li><a href="/begin"><?=__('Registrarse')?></a></li>
+	  <li><a href="/login"><?=__('Ingresar al sistema')?></a></li>
 	</ul>
       </div>
     </div>
