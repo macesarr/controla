@@ -52,6 +52,9 @@ class AppController extends Controller
         'controller' => 'Pages',
         'action' => 'display',
         'home'
+      ],
+      'authenticate' => [
+	'Form' => ['fields' => ['username' => 'email']]
       ]
     ]);
   }
@@ -73,7 +76,7 @@ class AppController extends Controller
 
   public function beforeFilter(Event $event)
   {
-    // $this->Auth->allow(['add', 'index', 'view']);
+    //$this->Auth->allow(['add', 'index', 'view']);
     $this->Auth->allow([]);
   }
   
