@@ -27,18 +27,25 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css('bootstrap.min.css') ?>
+    <?= $this->Html->css('admin.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
   </head>
   <body>    
-    <?= $this->element('navbar');?>
-    <div class="container">
-
-      <?= $this->Flash->render() ?>
-      <?= $this->fetch('content') ?>
-      
+    <?= $this->element('navbar-admin');?>
+    
+    <div class="container-fluid">
+      <div class="row">
+	<div class="col-sm-3 col-md-2 sidebar">
+	  <?=$this->element('sidebar')?>
+	</div>
+	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	  <?= $this->Flash->render() ?>
+	  <?= $this->fetch('content') ?>	  
+	</div>
+      </div>
     </div><!-- /container -->
     
     <footer>

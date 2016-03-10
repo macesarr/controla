@@ -45,14 +45,14 @@ class AppController extends Controller
     $this->loadComponent('Flash');
     $this->loadComponent('Auth', [
       'loginRedirect' => [
-        'controller' => 'Users',
-        'action' => 'index'
+        'controller' => 'Business',
+        'action' => 'dashboard'
       ],
       'logoutRedirect' => [
         'controller' => 'Pages',
-        'action' => 'display',
-        'home'
+        'action' => 'display'
       ],
+      'authError' => __('¡Usted no esta autorizado para ver esto!'),
       'authenticate' => [
 	'Form' => ['fields' => ['username' => 'email']]
       ]
@@ -76,7 +76,6 @@ class AppController extends Controller
 
   public function beforeFilter(Event $event)
   {
-    //$this->Auth->allow(['add', 'index', 'view']);
     $this->Auth->allow([]);
   }
   

@@ -16,15 +16,20 @@ class UsersController extends AppController
   public function beforeFilter(Event $event)
   {
     parent::beforeFilter($event);
-    $this->Auth->allow('add', 'logout');
+    $this->Auth->allow('add');
   }
 
   public function login()
   {
+    $session = $this->request->session();
     if ($this->request->is('post')) {
       $user = $this->Auth->identify();
       if ($user) {
         $this->Auth->setUser($user);
+
+	$session->write('userEmail', $user['email']);
+	$session->write('userBusines', $user['busines_id']);
+
         return $this->redirect($this->Auth->redirectUrl());
       }
       $this->Flash->error(__('Invalid username or password, try again'));
@@ -33,6 +38,10 @@ class UsersController extends AppController
 
   public function logout()
   {
+
+    $session = $this->request->session();
+    $session->destroy();
+    
     return $this->redirect($this->Auth->logout());
   }
   

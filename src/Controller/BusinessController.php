@@ -3,6 +3,8 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Utility\Inflector;
+use Cake\Event\Event;
+
 
 /**
  * Business Controller
@@ -11,6 +13,12 @@ use Cake\Utility\Inflector;
  */
 class BusinessController extends AppController
 {
+  
+  public function beforeFilter(Event $event)
+  {
+    parent::beforeFilter($event);
+    $this->Auth->allow('add');
+  }
 
   /**
    * Index method
@@ -19,6 +27,9 @@ class BusinessController extends AppController
    */
   public function index()
   {
+
+    $this->viewBuilder()->layout('admin');
+    
     $this->paginate = [
       'contain' => ['BusinessCategories', 'Cities']
     ];
@@ -64,7 +75,7 @@ class BusinessController extends AppController
       if($this->request->data['logo']['name'] != ''){
 	$logo = sha1(md5($this->request->data['name'])) . substr($this->request->data['logo']['name'], -4);
 	$folder = 'uploads/' . $logo;
-  
+	
 	move_uploaded_file($this->request->data['logo']["tmp_name"], $folder);
 	
 	$this->request->data['folder'] = $folder;
@@ -141,5 +152,15 @@ class BusinessController extends AppController
       $this->Flash->error(__('The busines could not be deleted. Please, try again.'));
     }
     return $this->redirect(['action' => 'index']);
+  }
+
+  /**
+   * Dashboard method
+   **/
+
+  public function dashboard(){
+
+    $this->viewBuilder()->layout('admin');
+    
   }
 }
