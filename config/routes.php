@@ -53,8 +53,9 @@ Router::scope('/', function (RouteBuilder $routes) {
   $routes->connect('/begin', ['controller' => 'Business', 'action' => 'add']);
   $routes->connect('/login', ['controller' => 'Users', 'action' => 'login']);
   $routes->connect('/logout', ['controller' => 'Users', 'action' => 'logout']);
-
-
+  $routes->connect('/dashboard', ['controller' => 'Business', 'action' => 'dashboard']);
+  $routes->connect('/mybusiness', ['controller' => 'Business', 'action' => 'view']);
+  
   /**
    * ...and connect the rest of 'Pages' controller's URLs.
    */
