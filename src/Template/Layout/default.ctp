@@ -32,19 +32,18 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
   </head>
-  <body>    
-    <?= $this->element('navbar');?>
-    <div class="container">
+  <body>
+      <?= $this->element('navbar');?>
+      <div class="container">
 
-      <?= $this->Flash->render() ?>
-      <?= $this->fetch('content') ?>
+	<?= $this->Flash->render() ?>
+	<?= $this->fetch('content') ?>
+	
+      </div><!-- /container -->
       
-    </div><!-- /container -->
-    
-    <footer>
-    </footer>
-    <?= $this->Html->script('jquery-1.10.2.min'); ?>
-    <?= $this->Html->script('bootstrap.min'); ?>
-    
+      <footer>
+      </footer>
+      <?= $this->Html->script('jquery-1.10.2.min'); ?>
+      <?= $this->Html->script('bootstrap.min'); ?>
   </body>
 </html>
