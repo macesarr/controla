@@ -37,6 +37,9 @@ class AppController extends Controller
    *
    * @return void
    */
+
+  public $idBusines;
+  
   public function initialize()
   {
     parent::initialize();
@@ -76,6 +79,8 @@ class AppController extends Controller
 
   public function beforeFilter(Event $event)
   {
+    $this->idBusines = $this->request->session()->read('Auth.User')['busines_id'];
+    
     $this->Auth->allow([]);
   }
   

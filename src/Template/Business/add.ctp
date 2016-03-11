@@ -7,8 +7,7 @@
   <div class="col-lg-6">
     <div class="alert alert-dismissible alert-info">
       <p><?= __('Todos los campos con (*) son obligatorios'); ?></p>
-    </div>
-    
+    </div>    
     
     <div class='form-group'>
       <?= $this->Form->input('business_category_id', ['label'=>__('Elija una categoría'), 'options' => $businessCategories, 'class'=>'form-control']); ?>
