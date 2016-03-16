@@ -23,7 +23,8 @@ class ProvidersController extends AppController
     
     $this->paginate = [
       'contain' => ['Business', 'Cities', 'BusinessCategories']
-    ]; 
+    ];
+    
     $query = $this->Providers->find('all')->where(['busines_id' => $this->idBusines]);
     $providers = $this->paginate($query);
 
